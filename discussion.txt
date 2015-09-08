@@ -1,0 +1,4 @@
+discussion
+=================================================================================>i starting project to make functon that drive snake it self.
+=>first i only make directinput function that take place of input and give them
+  instruction what comes out from dicrection fuction.  
