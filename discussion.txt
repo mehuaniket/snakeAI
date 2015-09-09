@@ -1,4 +1,6 @@
 discussion
 =================================================================================>i starting project to make functon that drive snake it self.
 =>first i only make directinput function that take place of input and give them
-  instruction what comes out from dicrection fuction.  
+  instruction what comes out from dicrection fuction.
+=>but not possible directly make function that give input like keys but i hve to silent key input that change direction of the snake.
+  
