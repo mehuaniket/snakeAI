@@ -11,8 +11,11 @@ pygame.init()
 fpsClock = pygame.time.Clock()
 
 playSurface = pygame.display.set_mode((640, 480))
-pygame.display.set_caption('Raspberry Snake')
-
+pygame.display.set_caption('SnakeAI')
+down='down'
+left='left'
+up='up'
+right='right'
 redColour = pygame.Color(255, 0, 0)
 blackColour = pygame.Color(0, 0, 0)
 whiteColour = pygame.Color(255, 255, 255)
@@ -23,6 +26,7 @@ raspberryPosition = [300,300]
 raspberrySpawned = 1
 direction = 'right'
 changeDirection = direction
+input='right'
 
 def gameOver():
     gameOverFont = pygame.font.Font('freesansbold.ttf', 72)
@@ -35,13 +39,50 @@ def gameOver():
     pygame.quit()
     sys.exit()
 
+def  whatinput():
+    if direction == 'right':
+        if snakePosition[0] == raspberryPosition[0]:
+		if snakePosition[1] < raspberryPosition[1]:
+	         	return 'down'
+     	   	else:
+      	      		return 'up'
+        else:
+        	return 'right'
+    if direction == 'left':
+        if snakePosition[0] == raspberryPosition[0]:
+		if snakePosition[1] < raspberryPosition[1]:
+	         	return 'down'
+     	   	else:
+      	      		return 'up'
+        else:
+        	return 'left'
+    if direction == 'up':
+        if snakePosition[1] == raspberryPosition[1]:
+		if snakePosition[0] < raspberryPosition[0]:
+	         	return 'right'
+     	   	else:
+      	      		return 'left'
+        else:
+        	return 'up'
+    if direction == 'down':
+        if snakePosition[1] == raspberryPosition[1]:
+		if snakePosition[0] < raspberryPosition[0]:
+	         	return 'right'
+     	   	else:
+      	      		return 'left'
+        else:
+        	return 'down'
+    
 while True:
+   # pygame.event.post(pygame.event.Event(QUIT))
+    
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
         elif event.type == KEYDOWN:
+ 
             if event.key == K_RIGHT or event.key == ord('d'):
-                changeDirection = 'right'
+	        changeDirection = 'right'
             if event.key == K_LEFT or event.key == ord('a'):
                 changeDirection = 'left'
             if event.key == K_UP or event.key == ord('w'):
@@ -50,6 +91,7 @@ while True:
                 changeDirection = 'down'
             if event.key == K_ESCAPE:
                 pygame.event.post(pygame.event.Event(QUIT))
+    changeDirection = whatinput()
     if changeDirection == 'right' and not direction == 'left':
         direction = changeDirection
     if changeDirection == 'left' and not direction == 'right':
@@ -88,5 +130,5 @@ while True:
     for snakeBody in snakeSegments[1:]:
         if snakePosition[0] == snakeBody[0] and snakePosition[1] == snakeBody[1]:
             gameOver()
-    fpsClock.tick(30)
+    fpsClock.tick(10)
 
