@@ -27,7 +27,8 @@ raspberrySpawned = 1
 direction = 'right'
 changeDirection = direction
 input='right'
-
+flag=True
+dirout='right'
 def gameOver():
     gameOverFont = pygame.font.Font('freesansbold.ttf', 72)
     gameOverSurf = gameOverFont.render('Game Over', True, greyColour)
@@ -40,60 +41,69 @@ def gameOver():
     sys.exit()
 
 def checkdir():
-    if direction == 'right':
+    if changeDirection == 'right':
         if snakePosition[0] > raspberryPosition[0]:
-		changeDirection='down'
-		return 1
-     	   	
-    if direction == 'left':
+            print ("in right")
+            flag=False
+            dirout='down'
+            print(dirout)
+            
+    if changeDirection == 'left':
         if snakePosition[0] < raspberryPosition[0]:
-		changeDirection='up'
-		return 1
+            print ("in left")
+            flag=False
+            dirout='up'
+            print(dirout)
      
-    if direction == 'up':
+    if changeDirection == 'up':
         if snakePosition[1] < raspberryPosition[1]:
-		changeDirection='right'
-		return 1
-     	   	
-    if direction == 'down':
+            print ("in up")
+            flag=False
+            dirout='right'
+            print(dirout)
+            
+    if changeDirection == 'down':
         if snakePosition[1] > raspberryPosition[1]:
-		changeDirection='left'
-		return 1
-		
-     	   	
+            print ("in down")
+            flag=False
+            dirout='left'
+            print(dirout)
+            
+        
+            
 def  whatinput():
     if direction == 'right':
         if snakePosition[0] == raspberryPosition[0]:
-		if snakePosition[1] < raspberryPosition[1]:
-	         	return 'down'
-     	   	else:
-      	      		return 'up'
+            if snakePosition[1] < raspberryPosition[1]:
+                return 'down'
+            else:
+                return 'up'
         else:
-        	return 'right'
+            return 'right'
     if direction == 'left':
         if snakePosition[0] == raspberryPosition[0]:
-		if snakePosition[1] < raspberryPosition[1]:
-	         	return 'down'
-     	   	else:
-      	      		return 'up'
+            if snakePosition[1] < raspberryPosition[1]:
+                return 'down'
+            else:
+                return 'up'
         else:
-        	return 'left'
+            return 'left'
     if direction == 'up':
         if snakePosition[1] == raspberryPosition[1]:
-		if snakePosition[0] < raspberryPosition[0]:
-	         	return 'right'
-     	   	else:
-      	      		return 'left'
+            if snakePosition[0] < raspberryPosition[0]:
+                return 'right'
+            else:
+                return 'left'
         else:
-        	return 'up'
+            return 'up'
     if direction == 'down':
         if snakePosition[1] == raspberryPosition[1]:
-		if snakePosition[0] < raspberryPosition[0]:
-	         	return 'right'
-     	   	else:
-      	      		return 'left'
+            if snakePosition[0] < raspberryPosition[0]:
+                return 'right'
+            else:
+                return 'left'
         else:
-        	return 'down'
+            return 'down'
     
 while True:
   
@@ -104,7 +114,7 @@ while True:
         elif event.type == KEYDOWN:
  
             if event.key == K_RIGHT or event.key == ord('d'):
-	        changeDirection = 'right'
+                changeDirection = 'right'
             if event.key == K_LEFT or event.key == ord('a'):
                 changeDirection = 'left'
             if event.key == K_UP or event.key == ord('w'):
@@ -113,28 +123,35 @@ while True:
                 changeDirection = 'down'
             if event.key == K_ESCAPE:
                 pygame.event.post(pygame.event.Event(QUIT))
-    if (snakePosition[0]<=40 or snakePosition[1]<=620):
-	if(direction=='left'):
-		changeDirection='down'
-	else:
-		changeDirection='right'	
-    elif (snakePosition[0]<=620 or snakePosition[1]<=40):
-	if(direction=='right'):
-		changeDirection='down'
-	else:
-		changeDirection='left'
-    elif (snakePosition[0]<=620 or snakePosition[1]<=460):
-	if(direction=='down'):
-		changeDirection='left'
-	else:
-		changeDirection='up'
-    elif (snakePosition[0]<=40 or snakePosition[1]<=460):
-	if(direction=='left'):
-		changeDirection='up'
-	else:
-		changeDirection='right'
-    else:
-        changeDirection = whatinput()
+##    if (snakePosition[0]<=40 or snakePosition[1]<=620):
+##        if(direction=='left'):
+##            changeDirection='down'
+##        else:
+##            changeDirection='right' 
+##    elif (snakePosition[0]<=620 or snakePosition[1]<=40):
+##        if(direction=='right'):
+##            changeDirection='down'
+##        else:
+##            changeDirection='left'
+##    elif (snakePosition[0]<=620 or snakePosition[1]<=460):
+##        if(direction=='down'):
+##            changeDirection='left'
+##        else:
+##            changeDirection='up'
+##    elif (snakePosition[0]<=40 or snakePosition[1]<=460):
+##        if(direction=='left'):
+##            changeDirection='up'
+##        else:
+##            changeDirection='right'
+##    else:
+    flag=True
+    changeDirection = whatinput()
+    print(changeDirection)
+    checkdir()
+    if(flag==False): 
+        changeDirection=dirout
+        print(dirout)
+
     if changeDirection == 'right' and not direction == 'left':
         direction = changeDirection
     if changeDirection == 'left' and not direction == 'right':
@@ -173,5 +190,5 @@ while True:
     for snakeBody in snakeSegments[1:]:
         if snakePosition[0] == snakeBody[0] and snakePosition[1] == snakeBody[1]:
             gameOver()
-    fpsClock.tick(5)
+    fpsClock.tick(10)
 
