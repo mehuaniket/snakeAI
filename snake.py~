@@ -113,28 +113,28 @@ while True:
                 changeDirection = 'down'
             if event.key == K_ESCAPE:
                 pygame.event.post(pygame.event.Event(QUIT))
-    if (snakePosition[0]<=40 or snakePosition[1]<=620):
-	if(direction=='left'):
-		changeDirection='down'
-	else:
-		changeDirection='right'	
-    elif (snakePosition[0]<=620 or snakePosition[1]<=40):
-	if(direction=='right'):
-		changeDirection='down'
-	else:
-		changeDirection='left'
-    elif (snakePosition[0]<=620 or snakePosition[1]<=460):
-	if(direction=='down'):
-		changeDirection='left'
-	else:
-		changeDirection='up'
-    elif (snakePosition[0]<=40 or snakePosition[1]<=460):
-	if(direction=='left'):
-		changeDirection='up'
-	else:
-		changeDirection='right'
-    else:
-        changeDirection = whatinput()
+##    if (snakePosition[0]<=20 or snakePosition[1]<=620):
+##	if(direction=='left'):
+##		changeDirection='down'
+##	else:
+##		changeDirection='right'	
+##    elif (snakePosition[0]<=620 or snakePosition[1]<=20):
+##	if(direction=='right'):
+##		changeDirection='down'
+##	else:
+##		changeDirection='left'
+##    elif (snakePosition[0]<=620 or snakePosition[1]<=460):
+##	if(direction=='down'):
+##		changeDirection='left'
+##	else:
+##		changeDirection='up'
+##    elif (snakePosition[0]<=20 or snakePosition[1]<=460):
+##	if(direction=='left'):
+##		changeDirection='up'
+##	else:
+##		changeDirection='right'
+##    else:
+    changeDirection = whatinput()
     if changeDirection == 'right' and not direction == 'left':
         direction = changeDirection
     if changeDirection == 'left' and not direction == 'right':
