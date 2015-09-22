@@ -4,11 +4,11 @@ snakeAI version 1.0 ->with basic bugs
 I) Computing/viewing means installation of snakeAI game with python 
 --
 you need pygame library that can be installed using following command
--pip install pygame
+->pip install pygame
 after you just need to goto location of snake.py module and run following command
--python snake.py
+->python snake.py
 II) contribution :compute and apply a mapping, TDCS (Transcranial direct-current stimulation)
---
+------------------------------------------------------------------------------------------------
 ->snake can't handle when raspberryposition is not in snake moving direction and crash with wall 
 ->i defined basic function but they basically work that direction is calculated but that don't parse to changedirection variable and over write with whatinput function 
 
