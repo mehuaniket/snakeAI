@@ -11,7 +11,7 @@ after you just need to goto location of snake.py module and run following comman
 
 python snake.py
 
-contribution :compute and apply a mapping, TDCS (Transcranial direct-current stimulation)
+contribution :compute and apply a mapping
 ------------------------------------------------------------------------------------------------
 snake can't handle when raspberryposition is not in snake moving direction and crash with wall 
 
