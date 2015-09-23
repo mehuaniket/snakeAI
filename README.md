@@ -13,13 +13,15 @@ python snake.py
 
 contribution :compute and apply a mapping, TDCS (Transcranial direct-current stimulation)
 ------------------------------------------------------------------------------------------------
-->snake can't handle when raspberryposition is not in snake moving direction and crash with wall 
-->i defined basic function but they basically work that direction is calculated but that don't parse to changedirection variable and over write with whatinput function 
+snake can't handle when raspberryposition is not in snake moving direction and crash with wall 
+
+i defined basic function but they basically work that direction is calculated but that don't parse to changedirection variable and over write with whatinput function 
 
 on windows:
 ------------------------
-  -> on windows it might hard to work with this game but is it okk if get success with windows 
-  ->installing pygame library is same as above mention using power shell
+ on windows it might hard to work with this game but is it okk if get success with windows 
+ 
+ installing pygame library is same as above mention using power shell
 	
 
 issues:
