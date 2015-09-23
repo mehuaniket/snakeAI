@@ -1,4 +1,4 @@
-snakeAI version 1.0 ->with basic bugs
+snakeAI version 1.0 with some probs
 ==================================================================================================
 
  Computing/viewing means installation of snakeAI game with python 
