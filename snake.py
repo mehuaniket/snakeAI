@@ -51,28 +51,28 @@ def checkdir():
     global dirout
     if changeDirection == 'right':
         if snakePosition[0] > raspberryPosition[0]:
-            print ("in right")
+            print ("in checkdir if right")
             flag=False
             dirout='down'
             print("log in checkdir :"+dirout)
             
     if changeDirection == 'left':
         if snakePosition[0] < raspberryPosition[0]:
-            print ("in left")
+            print ("in checkdir if left")
             flag=False
             dirout='up'
             print("log in checkdir :"+dirout)
      
     if changeDirection == 'up':
         if snakePosition[1] < raspberryPosition[1]:
-            print ("in up")
+            print ("in cheakdir if up")
             flag=False
             dirout='right'
             print("log in checkdir :"+dirout)
             
     if changeDirection == 'down':
         if snakePosition[1] > raspberryPosition[1]:
-            print ("in down")
+            print ("in cheackdir if down")
             flag=False
             dirout='left'
             print("log in checkdir :"+dirout)
@@ -161,7 +161,7 @@ while True:
 #flag initially true for checking snake will have raspberry position accessible or not
     flag=True
 #this might print the stat of the directon that really help you out to code other thinks that snake never crash :)     
-    print(changeDirection)
+    print("current direction :"+changeDirection)
 
 #call checkdir() function to check raspberry position is accessible or not
     checkdir()
@@ -170,7 +170,7 @@ while True:
 #if flag still true than call second function to do regular things
     if(flag==True): 
         changeDirection = whatinput()
-        print("log in loop :"+dirout)
+        print("log if flage TRUE :"+dirout)
 
 # following few lines checking that input is reverse direction to current input than block can not take input
 #issue:if out whatinput() function  continue input of same direction than might snake will crash:( 
@@ -216,4 +216,4 @@ while True:
         if snakePosition[0] == snakeBody[0] and snakePosition[1] == snakeBody[1]:
             gameOver()
     fpsClock.tick(9)
-
+    print("\n")
