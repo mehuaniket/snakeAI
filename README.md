@@ -1,4 +1,4 @@
-snakeAI version 1.0 with some probs
+snakeAI version 1.2 with some probs
 ==================================================================================================
 
  installation of snakeAI game with python 
