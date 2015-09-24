@@ -1,4 +1,4 @@
-snakeAI version 1.0 with some probs
+snakeAI version 1.2 with some probs
 ==================================================================================================
 
  installation of snakeAI game with python 
@@ -13,9 +13,9 @@ python snake.py
 
 contribution :
 --------------
-snake can't handle when [raspberryposition] is not in snake moving direction and crash with wall .
+[solved:]snake can't handle when [raspberryposition] is not in snake moving direction and crash with wall .
 
-i defined basic function , they basically work and  direction is calculated but that don't parse to [changedirection] variable and over write with [whatinput()] function .
+now,checkdir function issue solved but now snake is bite itself if it can't find that snake in the position in  snake head moving direction. 
 
 on windows:
 ------------
