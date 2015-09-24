@@ -27,6 +27,7 @@ raspberrySpawned = 1
 direction = 'right'
 changeDirection = direction
 input='right'
+global flag
 flag=True
 dirout='right'
 def gameOver():
@@ -41,33 +42,35 @@ def gameOver():
     sys.exit()
 
 def checkdir():
+    global flag
+    global dirout
     if changeDirection == 'right':
         if snakePosition[0] > raspberryPosition[0]:
             print ("in right")
             flag=False
             dirout='down'
-            print(dirout)
+            print("log in checkdir :"+dirout)
             
     if changeDirection == 'left':
         if snakePosition[0] < raspberryPosition[0]:
             print ("in left")
             flag=False
             dirout='up'
-            print(dirout)
+            print("log in checkdir :"+dirout)
      
     if changeDirection == 'up':
         if snakePosition[1] < raspberryPosition[1]:
             print ("in up")
             flag=False
             dirout='right'
-            print(dirout)
+            print("log in checkdir :"+dirout)
             
     if changeDirection == 'down':
         if snakePosition[1] > raspberryPosition[1]:
             print ("in down")
             flag=False
             dirout='left'
-            print(dirout)
+            print("log in checkdir :"+dirout)
             
         
             
@@ -145,12 +148,15 @@ while True:
 ##            changeDirection='right'
 ##    else:
     flag=True
-    changeDirection = whatinput()
+     
     print(changeDirection)
     checkdir()
-    if(flag==False): 
-        changeDirection=dirout
-        print(dirout)
+    changeDirection=dirout
+    print("log checkdir after :"+dirout)
+
+    if(flag==True): 
+        changeDirection = whatinput()
+        print("log in loop :"+dirout)
 
     if changeDirection == 'right' and not direction == 'left':
         direction = changeDirection
