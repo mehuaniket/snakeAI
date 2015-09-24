@@ -24,10 +24,6 @@ on windows:
  installing pygame library is same as above mention using powershell.
 	
 
-issues:
----------
-i did'nt describe the function using comment block hope but soon i do.
-that might hard to understand code but it going easy if you start readiing code.
 
 contact:
 ----------
