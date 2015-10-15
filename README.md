@@ -10,11 +10,7 @@ pip install pygame
 after you just need to goto location of snake.py module and run following command
 
 python snake.py
-on windows:
-------------
- on windows it might hard to work with this game but  it is  okk if get success with windows .
- 
- installing pygame library is same as above mention using powershell.
+
 
 contribution :
 --------------
