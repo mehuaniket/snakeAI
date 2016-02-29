@@ -11,10 +11,6 @@
 
 > $ python snake.py
 
-###on windows:
-------------
-- installing pygame library is same as above mention,but use powershell.
-
 ###contribution :
 --------------
 - snake bite itself if it run in border and decision make it to turn wrong side!
