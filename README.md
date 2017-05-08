@@ -1,7 +1,7 @@
-#snakeAI version 1.2 
+# SnakeAI version 1.2 
 ===================
 
-###installation 
+### Installation 
 ---------------
 - you need pygame library that can be installed using following command
 
@@ -11,12 +11,11 @@
 
 > $ python snake.py
 
-###contribution :
+### Next Version :
 --------------
-- snake bite itself if it run in border and decision make it to turn wrong side!
+- snake bite itself if turn itself in same line!
 
-	
-###contact:
+### contact:
 ----------
 - email: ceaniket@gmail.com
 
