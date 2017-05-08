@@ -1,5 +1,4 @@
 # SnakeAI version 1.2 
-===================
 
 ### Installation 
 ---------------
